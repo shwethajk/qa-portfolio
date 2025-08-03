@@ -1,35 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <div style={{ minHeight: "100vh", backgroundColor: "#f9fafb", padding: 20 }}>
+            <div style={{ maxWidth: 800, margin: "0 auto" }}>
+                    <h1 style={{ fontSize: 36, fontWeight: "bold", textAlign: "center", marginBottom: 10 }}>
+                              Shwetha Kulal
+                                      </h1>
+                                              <p style={{ textAlign: "center", fontSize: 18, color: "#4b5563", marginBottom: 20 }}>
+                                                        QA Test Engineer | Python | Selenium | Robot Framework | GTest
+                                                                </p>
 
-export default App
+                                                                        <div style={{ display: "flex", justifyContent: "center", gap: 10, marginBottom: 30 }}>
+                                                                                  <a href="mailto:shwethaas123@gmail.com"><button>Email</button></a>
+                                                                                            <a href="https://github.com/shwethajk" target="_blank" rel="noreferrer"><button>GitHub</button></a>
+                                                                                                    </div>
+
+                                                                                                            <h2 style={{ fontSize: 24, fontWeight: "600", marginBottom: 10 }}>Projects</h2>
+
+                                                                                                                    <div style={{ display: "grid", gap: 20 }}>
+                                                                                                                              <ProjectCard
+                                                                                                                                          title="Selenium Login Test"
+                                                                                                                                                      desc="Automated login flow with Python + Selenium WebDriver."
+                                                                                                                                                                  link="#"
+                                                                                                                                                                            />
+                                                                                                                                                                                      <ProjectCard
+                                                                                                                                                                                                  title="Robot Framework Suite"
+                                                                                                                                                                                                              desc="Test automation using keyword-driven approach."
+                                                                                                                                                                                                                          link="#"
+                                                                                                                                                                                                                                    />
+                                                                                                                                                                                                                                              <ProjectCard
+                                                                                                                                                                                                                                                          title="GTest Unit Tests"
+                                                                                                                                                                                                                                                                      desc="Unit testing framework used in embedded testing."
+                                                                                                                                                                                                                                                                                  link="#"
+                                                                                                                                                                                                                                                                                            />
+                                                                                                                                                                                                                                                                                                      <ProjectCard
+                                                                                                                                                                                                                                                                                                                  title="Postman API Testing"
+                                                                                                                                                                                                                                                                                                                              desc="Basic request validation and automation with collections."
+                                                                                                                                                                                                                                                                                                                                          link="#"
+                                                                                                                                                                                                                                                                                                                                                    />
+                                                                                                                                                                                                                                                                                                                                                            </div>
+
+                                                                                                                                                                                                                                                                                                                                                                    <h2 style={{ fontSize: 24, fontWeight: "600", marginTop: 40 }}>About Me</h2>
+                                                                                                                                                                                                                                                                                                                                                                            <p style={{ color: "#374151" }}>
+                                                                                                                                                                                                                                                                                                                                                                                      I’m Shwetha from Udupi, currently working at Tata Elxsi with 1.4 years of experience. I have hands-on testing experience in GTest, and I’ve recently upskilled in Selenium, Python, and Robot Framework for QA automation.
+                                                                                                                                                                                                                                                                                                                                                                                              </p>
+                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                          );
+                                                                                                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                                                                                                          function ProjectCard({ title, desc, link }: { title: string; desc: string; link: string }) {
+                                                                                                                                                                                                                                                                                                                                                                                                            return (
+                                                                                                                                                                                                                                                                                                                                                                                                                <div style={{ backgroundColor: "white", padding: 16, borderRadius: 10, boxShadow: "0 1px 4px #ccc" }}>
+                                                                                                                                                                                                                                                                                                                                                                                                                      <h3 style={{ fontSize: 20, fontWeight: "600" }}>{title}</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <p style={{ color: "#4b5563", marginBottom: 10 }}>{desc}</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                  <a href={link} target="_blank" rel="noreferrer" style={{ color: "#2563eb" }}>
+                                                                                                                                                                                                                                                                                                                                                                                                                                          View Code
+                                                                                                                                                                                                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      );
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      export default App;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      
