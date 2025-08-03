@@ -1,3 +1,5 @@
+import React from "react";
+
 type ProjectProps = {
   title: string;
   desc: string;
@@ -5,10 +7,15 @@ type ProjectProps = {
 };
 
 const ProjectCard = ({ title, desc, link }: ProjectProps) => (
-  <div style={{ backgroundColor: "#fff", padding: 16, borderRadius: 10, boxShadow: "0 2px 6px #ccc" }}>
-    <h3 style={{ fontSize: 20, fontWeight: 600 }}>{title}</h3>
-    <p style={{ color: "#555", marginBottom: 10 }}>{desc}</p>
-    <a href={link} target="_blank" rel="noreferrer" style={{ color: "#0070f3" }}>
+  <div style={{
+    backgroundColor: "#1f2937",
+    padding: 20,
+    borderRadius: 16,
+    boxShadow: "0 2px 10px rgba(0,0,0,0.4)"
+  }}>
+    <h3 style={{ color: "#a78bfa", fontSize: 20, fontWeight: 600 }}>{title}</h3>
+    <p style={{ color: "#d1d5db", marginBottom: 10 }}>{desc}</p>
+    <a href={link} target="_blank" rel="noreferrer" style={{ color: "#8b5cf6", textDecoration: "underline" }}>
       View Code
     </a>
   </div>
@@ -16,34 +23,70 @@ const ProjectCard = ({ title, desc, link }: ProjectProps) => (
 
 export default function App() {
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#f9f9f9", padding: 20 }}>
-      <div style={{ maxWidth: 800, margin: "0 auto" }}>
-        <h1 style={{ fontSize: 36, fontWeight: "bold", textAlign: "center", marginBottom: 10 }}>
+    <div style={{
+      minHeight: "100vh",
+      backgroundColor: "#111827",
+      color: "#f9fafb",
+      fontFamily: "Arial, sans-serif",
+      padding: 24
+    }}>
+      <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        <h1 style={{ fontSize: 36, fontWeight: "bold", textAlign: "center", marginBottom: 8 }}>
           Shwetha Kulal
         </h1>
-        <p style={{ textAlign: "center", fontSize: 18, color: "#444", marginBottom: 20 }}>
-          QA Test Engineer | Python | Selenium | Robot Framework | GTest
+        <p style={{ textAlign: "center", fontSize: 18, color: "#9ca3af", marginBottom: 24 }}>
+          QA Test Engineer | Python • Selenium • Robot Framework • GTest
         </p>
 
-        <div style={{ display: "flex", justifyContent: "center", gap: 10, marginBottom: 30 }}>
-          <a href="mailto:shwethaas123@gmail.com"><button>Email</button></a>
-          <a href="https://github.com/shwethajk" target="_blank" rel="noreferrer"><button>GitHub</button></a>
+        <div style={{ display: "flex", justifyContent: "center", gap: 12, marginBottom: 30, flexWrap: "wrap" }}>
+          <a href="mailto:shwethaas123@gmail.com">
+            <button style={btnStyle}>Email Me</button>
+          </a>
+          <a href="https://github.com/shwethajk" target="_blank" rel="noreferrer">
+            <button style={btnStyle}>GitHub</button>
+          </a>
+          <a href="https://onedrive.live.com/download?resumefile=ShwethaKulalQAResume.pdf" target="_blank" rel="noreferrer">
+            <button style={btnStyle}>Download Resume</button>
+          </a>
         </div>
 
-        <h2 style={{ fontSize: 24, fontWeight: 600, marginBottom: 10 }}>Projects</h2>
-        <div style={{ display: "grid", gap: 20 }}>
-          <ProjectCard title="Selenium Login Test" desc="Automated login using Selenium in Python." link="#" />
-          <ProjectCard title="Robot Framework Suite" desc="Keyword-driven automation test suite." link="#" />
-          <ProjectCard title="GTest Unit Testing" desc="Embedded testing using Google Test." link="#" />
-          <ProjectCard title="Postman API Testing" desc="Collection for basic API testing flows." link="#" />
-        </div>
+        <section>
+          <h2 style={sectionTitle}>Projects</h2>
+          <div style={{ display: "grid", gap: 20 }}>
+            <ProjectCard title="Selenium Login Test" desc="Automated login with Python + Selenium WebDriver." link="#" />
+            <ProjectCard title="Robot Framework Suite" desc="Keyword-driven automation test suite." link="#" />
+            <ProjectCard title="GTest Unit Tests" desc="Unit testing framework used in embedded testing." link="#" />
+            <ProjectCard title="Postman API Testing" desc="Basic request validation and test automation." link="#" />
+          </div>
+        </section>
 
-        <h2 style={{ fontSize: 24, fontWeight: 600, marginTop: 40 }}>About Me</h2>
-        <p style={{ color: "#555" }}>
-          I’m Shwetha from Udupi, currently working at Tata Elxsi with 1.4 years of experience in software QA testing.
-          Skilled in manual and automated testing, including Python + Selenium and Robot Framework.
-        </p>
+        <section style={{ marginTop: 40 }}>
+          <h2 style={sectionTitle}>About Me</h2>
+          <p style={{ color: "#d1d5db", lineHeight: 1.6 }}>
+            I’m Shwetha from Udupi, currently working as a QA Engineer at Tata Elxsi with 1.4 years of experience in software testing. 
+            My hands-on experience includes unit testing with GTest and automation testing using Python, Selenium, and Robot Framework. 
+            This portfolio reflects my personal growth in QA and my dedication to continuous learning.
+          </p>
+        </section>
       </div>
     </div>
   );
 }
+
+const btnStyle = {
+  backgroundColor: "#8b5cf6",
+  color: "#fff",
+  padding: "10px 20px",
+  border: "none",
+  borderRadius: 10,
+  fontSize: 14,
+  cursor: "pointer",
+  boxShadow: "0 2px 6px rgba(0,0,0,0.3)"
+};
+
+const sectionTitle = {
+  fontSize: 24,
+  fontWeight: 600,
+  color: "#a78bfa",
+  marginBottom: 16
+};
